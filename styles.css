@@ -11,27 +11,35 @@ body {
     background-image: url(assets/burger-friends.jpg);
     background-position: center;
 }
-
+div#rectangle {
+    background-color: #0fb9b1;
+    width: 2600;
+    height: 80;
+    margin-left: -8;
+    margin-top: -6;
+}
 .title {
     display: inline-block;
     font-weight: 500;
-    font-size: 22px;
-    background-color: #0fb9b1;
+    font-size: 27px;
     padding: 15px;
-    margin-left: -8;
-    margin-top: -5;
-    width: 100%;
+    margin-top: 10;
 }
-/* img {
-    max-height: 100%;
-    max-width: 100%;
-    padding: 0;
-} */
+#add-recipe {
+    font-size: 20;
+    position: absolute;
+    padding: 10;
+    border: 2px black;
+    border-radius: 5px;
+    margin-left: 2150;
+    margin-top: 18;
+}
+
 .wrapper {
     background-color: rgba(225, 225, 225, .9);
     display: flex;
     margin-left: 100;
-    margin-top: 30;
+    margin-top: 65;
     height: 450px;
     border: solid 1px black;
     width: 25%;
@@ -49,7 +57,7 @@ body {
     font-size: 25px;
     vertical-align:super;
 }
-div {
+div#meal{
     display: block;
     margin-top: 20;
 }
@@ -64,7 +72,7 @@ input[type='radio']:checked {
 }
 
 label {
-    font-size: 22px;
+    font-size: 25px;
     margin-left: 5;
 }
 
@@ -72,14 +80,27 @@ button#lets-cook {
     display: inline-block;
     border-radius: 5px;
     border: 5px;
-    width: 200;
+    width: 230;
     text-align: center;
     height: 35;
     background-color: #0fb9b1;
-    padding: 10;
+    font-size: 18px;
 }
+.wrapper:nth-child(2) {
+    display:inline-block;
 
-/* #add-recipe {
-    border: 2px black;
-    border-radius: 3px;
-} */
+}
+.parent-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+img {
+    width: 25%;
+    height: 35%;
+}
+div#cookpot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+}
