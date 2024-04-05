@@ -10,6 +10,11 @@ red - #ee5253
 body {
     background-image: url(assets/burger-friends.jpg);
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
 }
 div#rectangle {
     background-color: #0fb9b1;
@@ -125,5 +130,14 @@ div#cookpot{
 p.any-dish {
     margin-top: -325;
     font-size: 50px;
+    font-weight: 550;
+}
+
+p.entire-meal{
+    font-size: 28;
+    text-wrap: balance;
+    margin-left: 120;
+    margin-bottom: 350;
+    width: 90%;
     font-weight: 550;
 }
