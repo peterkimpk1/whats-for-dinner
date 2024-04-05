@@ -103,9 +103,27 @@ img {
     width: 25%;
     height: 35%;
 }
+
 div#cookpot{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 450px;
+}
+.you-should-make {
+    display: block;
+    margin-left: 215;
+    margin-top: 160;
+    font-size: 30;
+    border: none;
+}
+
+.hidden{
+    display: none;
+}
+
+p.any-dish {
+    margin-top: -325;
+    font-size: 50px;
+    font-weight: 550;
 }
