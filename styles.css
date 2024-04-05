@@ -62,6 +62,10 @@ div#meal{
     margin-top: 20;
 }
 
+input[type='radio'] {
+    cursor: pointer;
+}
+
 input[type='radio']:checked {
     accent-color: #0fb9b1
 }
@@ -77,6 +81,7 @@ label {
 }
 
 button#lets-cook {
+    cursor: pointer;
     display: inline-block;
     border-radius: 5px;
     border: 5px;
