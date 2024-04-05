@@ -43,6 +43,12 @@ body {
     font-weight: 540;
 }
 
+.required-field:after {
+    content: "*";
+    color: red;
+    font-size: 25px;
+    vertical-align:super;
+}
 div {
     display: block;
     margin-top: 20;
