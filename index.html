@@ -7,14 +7,24 @@
   <body>
     <!-- <button id="add-recipe">ADD A RECIPE</button> -->
     <section class="wrapper">
-      <h1 class=boxTitle>What are you looking for?</h1>
-    <section class="list">
-      <ul>Side</ul> 
-      <ul>Main Dish</ul>
-      <ul>Dessert</ul>
-      <ul>Entire Meal</ul>
-    </section>
-      <div class="box2"></div>
+    <form class="meals">
+      <p id="form-prompt">What are you looking for?</p>
+      <div>
+        <input type="radio" id="side" value="side" name="food"><label for="side">Side</label><br>
+      </div>
+      <div>
+        <input type="radio" id="main-dish" value="main-dish" name="food"><label for="main-dish">Main Dish</label><br>
+      </div>
+      <div>
+        <input type="radio" id="dessert" value="dessert" name="food"><label for="dessert">Dessert</label><br>
+      </div>
+      <div>
+        <input type="radio" id="entire-meal" value="entire-meal" name="food"><label for="entire-meal">Entire Meal</label><br>
+      </div>
+      <div>
+        <button type="submit" id="lets-cook">LET'S COOK!</button>
+      </div>
+    </form>
     </section>
   </body>
   <script type="text/javascript" src="main.js"></script>
