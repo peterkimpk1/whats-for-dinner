@@ -31,28 +31,47 @@ body {
     background-color: rgba(225, 225, 225, .9);
     display: flex;
     margin-left: 100;
-    margin-top: 20;
+    margin-top: 30;
     height: 450px;
     border: solid 1px black;
     width: 25%;
-    opacity: .8;
+    opacity: .9;
     flex-direction: column;
 }
-.boxTitle {
-    margin-left: 30;
-    margin-top: 70;
-    font-size: 30;
-    font-weight: 545;
-}
-.list {
-    justify-content: space-evenly;
-    border: solid;
-    height: 200;
-    flex-direction: column;
-    display: flex;
-    margin-left: 30;
+#form-prompt {
+    font-size: 35;
+    font-weight: 540;
 }
 
+div {
+    display: block;
+    margin-top: 20;
+}
+
+input[type='radio']:checked {
+    accent-color: #0fb9b1
+}
+.meals {
+  border-radius: 10px;
+  margin-left: 50;
+  margin-top: 50;
+}
+
+label {
+    font-size: 22px;
+    margin-left: 5;
+}
+
+button#lets-cook {
+    display: inline-block;
+    border-radius: 5px;
+    border: 5px;
+    width: 200;
+    text-align: center;
+    height: 35;
+    background-color: #0fb9b1;
+    padding: 10;
+}
 
 /* #add-recipe {
     border: 2px black;
