@@ -48,7 +48,11 @@ div#button-wrapper {
     justify-content: center;
     align-items: center;
 }
-
+.parent-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    height: 365px;
+}
 .wrapper {
     background-color: rgba(225, 225, 225, .9);
     display: flex;
@@ -83,6 +87,7 @@ input[type='radio'] {
 input[type='radio']:checked {
     accent-color: #0fb9b1
 }
+
 .meals {
   border-radius: 10px;
   margin-left: 50;
@@ -105,29 +110,31 @@ button#lets-cook {
     background-color: #0fb9b1;
     font-size: 18px;
 }
-.wrapper:nth-child(2) {
-    display:inline-block;
-
-}
-.parent-wrapper {
-    display: flex;
-    justify-content: space-evenly;
-}
-img {
-    width: 25%;
-    height: 35%;
-}
-
-div#cookpot{
+.wrapper#second-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px;
 }
-.you-should-make {
-    display: block;
-    margin-left: 215;
-    margin-top: 160;
+div#cookpot-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div#clear-button-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 85%;
+    height: 225;
+}
+
+div#you-should-make-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.you-should-make{
     font-size: 30;
     border: none;
 }
@@ -135,18 +142,33 @@ div#cookpot{
 .hidden{
     display: none;
 }
+img {
+    height: 75%;
+    width: 75%;
+}
+
+button#clear-button {
+    z-index: 1;
+    opacity: 1;
+    border: none;
+    background-color: #95a5a6;
+    color: white;
+    padding: 10;
+    border-radius: 3px;
+    width: 85;
+}
 
 p.any-dish {
-    margin-top: -325;
+    margin-top: 5;
     font-size: 50px;
     font-weight: 550;
+    text-align: center;
+    text-wrap: balance;
 }
 
 p.entire-meal{
     font-size: 28;
     text-wrap: balance;
-    margin-left: 120;
-    margin-bottom: 350;
-    width: 90%;
     font-weight: 550;
+    text-align: center;
 }
