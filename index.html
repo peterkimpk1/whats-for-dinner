@@ -28,7 +28,7 @@
           <input type="radio" id="entire-meal" value="entire-meal" name="food"><label for="entire-meal">Entire Meal</label><br>
         </div>
         <div id="meal">
-          <button type="submit" id="lets-cook">LET'S COOK!</button>
+          <button type="submit" id="lets-cook" disabled>LET'S COOK!</button>
         </div>
       </form>
     </section>
@@ -44,6 +44,13 @@
   </section>
   <div id="clear-button-box">
     <button class="hidden" id="clear-button">CLEAR</button>
+  </div>
+  <div class='hidden' id="add-recipe-container">
+    <form id="recipe-bar">
+      <label id='recipe-type-label'for="recipe-type">Recipe Type: </label><input type='text' id="recipe-type" name="recipe-type">
+      <label id='recipe-name-label'for="recipe-name">Recipe Name: </label><input type='text' id="recipe-name" name="recipe-name">
+      <button type="submit" id="add-recipe-button">ADD NEW</button>
+    </form>
   </div>
   </body>
   <script type="text/javascript" src="main.js"></script>

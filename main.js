@@ -47,7 +47,7 @@ var desserts = [
     "Croissants",
     "Eclairs"
   ];
-
+var mealTypes = ['sides', 'mains', 'desserts','side','main','dessert'];
 //queryvariables
 var sideInput = document.querySelector('#side');
 var mainDishInput = document.querySelector('#main-dish');
@@ -60,12 +60,21 @@ var secondWrapper = document.querySelector('#second-box')
 var cookPotImage = document.querySelector('#cookpot')
 var clearButton = document.querySelector("#clear-button")
 var allInputs = document.querySelectorAll('input');
+var addRecipeButton = document.querySelector('#add-recipe');
+var recipeInputBar = document.querySelector('#add-recipe-container')
+var recipeTypeInput = document.querySelector('#recipe-type');
+var recipeNameInput = document.querySelector('#recipe-name');
+var recipeAddNewButton = document.querySelector('#add-recipe-button');
 
 letsCookButton.addEventListener('click', showMeals);
 clearButton.addEventListener('click', clearMeals);
+addRecipeButton.addEventListener('click', showAddRecipeBar);
+recipeAddNewButton.addEventListener('click', addUserRecipe);
 
 
-enableCookButton();
+function showAddRecipeBar() {
+  recipeInputBar.classList.remove('hidden')
+}
 
 function clearMeals(event) {
   event.preventDefault();
@@ -81,11 +90,37 @@ function enableCookButton() {
       if(this.checked) {
         letsCookButton.removeAttribute('disabled');
       }
-      else {
-        letsCookButton.addAttribute('disabled', true)
-      }
     }
   }
+}
+
+function displayMeals() {
+  userShouldMakeText.classList.remove('hidden');
+  clearButton.classList.remove("hidden");
+  cookPotImage.classList.add('hidden');
+}
+
+function addUserRecipe(event) {
+  event.preventDefault();
+  if (recipeTypeInput.value && recipeNameInput.value) {
+    if (!mealTypes.includes(recipeTypeInput.value)) {
+      window.alert("Please choose a type between side(s), main(s), or dessert(s)")
+    }
+    else {
+      if (recipeTypeInput.value === 'sides') {
+        sides.push(recipeNameInput.value);
+      }
+      else if (recipeTypeInput.value === 'mains') {
+        mains.push(recipeNameInput.value);
+      }
+      else if (recipeTypeInput.value === 'desserts') {
+        desserts.push(recipeNameInput.value);
+      }
+      displayMeals();
+      mealBox.innerHTML = `<p class=any-dish>${recipeNameInput.value}!</p>`
+      recipeInputBar.classList.add('hidden')
+    }
+  } 
 }
 
 function showMeals(event) {
@@ -93,9 +128,7 @@ function showMeals(event) {
   var randomSideDish = randomMeal(sides);
   var randomMainDish = randomMeal(mains);
   var randomDessertDish = randomMeal(desserts);
-  userShouldMakeText.classList.remove('hidden');
-  clearButton.classList.remove("hidden");
-  cookPotImage.classList.add('hidden');
+  displayMeals();
   if (sideInput.checked) {
     mealBox.innerHTML = `<p class=any-dish>${randomSideDish}!</p>`
   }
@@ -116,3 +149,5 @@ function randomMeal(meal) {
 function getRandomNumber(max) {
   return Math.floor(Math.random() * max)
 }
+
+enableCookButton();
