@@ -59,15 +59,40 @@ var userShouldMakeText = document.querySelector('.you-should-make')
 var secondWrapper = document.querySelector('#second-box')
 var cookPotImage = document.querySelector('#cookpot')
 var clearButton = document.querySelector("#clear-button")
-letsCookButton.addEventListener('click', showMeals);
+var allInputs = document.querySelectorAll('input');
 
+letsCookButton.addEventListener('click', showMeals);
+clearButton.addEventListener('click', clearMeals);
+
+
+enableCookButton();
+
+function clearMeals(event) {
+  event.preventDefault();
+  mealBox.innerHTML = ""
+  cookPotImage.classList.remove('hidden')
+  userShouldMakeText.classList.add('hidden')
+  clearButton.classList.add('hidden')
+}
+
+function enableCookButton() {
+  for (var i = 0; i < allInputs.length; i++) {
+    allInputs[i].onchange = function() {
+      if(this.checked) {
+        letsCookButton.removeAttribute('disabled');
+      }
+      else {
+        letsCookButton.addAttribute('disabled', true)
+      }
+    }
+  }
+}
 
 function showMeals(event) {
   event.preventDefault();
   var randomSideDish = randomMeal(sides);
   var randomMainDish = randomMeal(mains);
   var randomDessertDish = randomMeal(desserts);
-  var entireMeal = [randomMainDish, randomSideDish, randomDessertDish]
   userShouldMakeText.classList.remove('hidden');
   clearButton.classList.remove("hidden");
   cookPotImage.classList.add('hidden');
@@ -81,7 +106,7 @@ function showMeals(event) {
     mealBox.innerHTML = `<p class=any-dish>${randomDessertDish}!</p>`
   }
   else if (entireMealInput.checked) {
-    mealBox.innerHTML = `<p class=entire-meal>${entireMeal[0]} with a side of ${entireMeal[1]} and ${entireMeal[2]} for dessert!</p>`
+    mealBox.innerHTML = `<p class=entire-meal>${randomMainDish} with a side of ${randomSideDish} and ${randomDessertDish} for dessert!</p>`
   }
 }
 
