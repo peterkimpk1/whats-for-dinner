@@ -148,8 +148,8 @@ img {
 }
 
 button#clear-button {
+    cursor: pointer;
     z-index: 1;
-    opacity: 1;
     border: none;
     background-color: #95a5a6;
     color: white;
@@ -171,4 +171,13 @@ p.entire-meal{
     text-wrap: balance;
     font-weight: 550;
     text-align: center;
+}
+
+div#add-recipe-container {
+    background-color:#95a5a6;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: .9;
+    padding: 20px;
 }
