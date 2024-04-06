@@ -60,12 +60,19 @@ var secondWrapper = document.querySelector('#second-box')
 var cookPotImage = document.querySelector('#cookpot')
 var clearButton = document.querySelector("#clear-button")
 var allInputs = document.querySelectorAll('input');
+var addRecipeButton = document.querySelector('#add-recipe');
+var recipeInputBar = document.querySelector('#add-recipe-container')
 
 letsCookButton.addEventListener('click', showMeals);
 clearButton.addEventListener('click', clearMeals);
+addRecipeButton.addEventListener('click', showAddRecipeBar);
 
+function showAddRecipeBar() {
+  recipeInputBar.classList.remove('hidden')
+}
 
 enableCookButton();
+
 
 function clearMeals(event) {
   event.preventDefault();
