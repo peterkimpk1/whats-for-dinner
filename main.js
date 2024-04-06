@@ -54,9 +54,11 @@ var mainDishInput = document.querySelector('#main-dish');
 var dessertInput = document.querySelector('#dessert');
 var entireMealInput = document.querySelector('#entire-meal');
 var letsCookButton = document.querySelector('#lets-cook');
-var cookPotImage = document.querySelector('#cookpot')
+var mealBox = document.querySelector('#meal-box')
 var userShouldMakeText = document.querySelector('.you-should-make')
 var secondWrapper = document.querySelector('#second-box')
+var cookPotImage = document.querySelector('#cookpot')
+var clearButton = document.querySelector("#clear-button")
 letsCookButton.addEventListener('click', showMeals);
 
 
@@ -67,18 +69,19 @@ function showMeals(event) {
   var randomDessertDish = randomMeal(desserts);
   var entireMeal = [randomMainDish, randomSideDish, randomDessertDish]
   userShouldMakeText.classList.remove('hidden');
-  cookPotImage.innerHTML = "";
+  clearButton.classList.remove("hidden");
+  cookPotImage.classList.add('hidden');
   if (sideInput.checked) {
-    cookPotImage.innerHTML = `<p class=any-dish>${randomSideDish}!</p>`
+    mealBox.innerHTML = `<p class=any-dish>${randomSideDish}!</p>`
   }
   else if (mainDishInput.checked) {
-    cookPotImage.innerHTML = `<p class=any-dish>${randomMainDish}!</p>`
+    mealBox.innerHTML = `<p class=any-dish>${randomMainDish}!</p>`
   }
   else if (dessertInput.checked) {
-    cookPotImage.innerHTML = `<p class=any-dish>${randomDessertDish}!</p>`
+    mealBox.innerHTML = `<p class=any-dish>${randomDessertDish}!</p>`
   }
   else if (entireMealInput.checked) {
-    cookPotImage.innerHTML = `<p class=entire-meal>${entireMeal[0]} with a side of ${entireMeal[1]} and ${entireMeal[2]} for dessert!</p>`
+    mealBox.innerHTML = `<p class=entire-meal>${entireMeal[0]} with a side of ${entireMeal[1]} and ${entireMeal[2]} for dessert!</p>`
   }
 }
 
