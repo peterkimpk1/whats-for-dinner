@@ -16,6 +16,7 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
 div#rectangle {
     display: flex;
     justify-content: space-between;
@@ -25,6 +26,7 @@ div#rectangle {
     height: 80px;
     margin: 0;
 }
+
 .title {
     display: inline-block;
     font-weight: 500;
@@ -37,6 +39,7 @@ div#button-wrapper {
     align-items: center;
     width: 220px;
 }
+
 #add-recipe {
     display: flex;
     font-size: 20;
@@ -48,11 +51,13 @@ div#button-wrapper {
     justify-content: center;
     align-items: center;
 }
+
 .parent-wrapper {
     display: flex;
     justify-content: space-evenly;
     height: 365px;
 }
+
 .wrapper {
     background-color: rgba(225, 225, 225, .9);
     display: flex;
@@ -64,6 +69,7 @@ div#button-wrapper {
     opacity: .9;
     flex-direction: column;
 }
+
 #form-prompt {
     font-size: 35;
     font-weight: 540;
@@ -75,7 +81,8 @@ div#button-wrapper {
     font-size: 25px;
     vertical-align:super;
 }
-div#meal{
+
+div#meal {
     display: block;
     margin-top: 20;
 }
@@ -110,16 +117,19 @@ button#lets-cook {
     background-color: #0fb9b1;
     font-size: 18px;
 }
+
 .wrapper#second-box {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 div#cookpot-box {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 div#clear-button-box {
     display: flex;
     align-items: center;
@@ -132,16 +142,17 @@ div#you-should-make-box{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-.you-should-make{
+
+.you-should-make {
     font-size: 30;
     border: none;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
+
 img {
     height: 75%;
     width: 75%;
@@ -186,9 +197,10 @@ form#recipe-bar {
     align-items:center;
 }
 
-input#recipe-type, input#recipe-name{
+input#recipe-type, input#recipe-name {
     padding:10px
 }
+
 label#recipe-type-label, label#recipe-name-label {
     padding:15px;
 }
