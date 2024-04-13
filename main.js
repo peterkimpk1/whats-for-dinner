@@ -73,15 +73,15 @@ recipeAddNewButton.addEventListener('click', addUserRecipe);
 
 
 function showAddRecipeBar() {
-  recipeInputBar.classList.remove('hidden')
+  show(recipeInputBar);
 }
 
 function clearMeals(event) {
   event.preventDefault();
   mealBox.innerHTML = ""
-  cookPotImage.classList.remove('hidden')
-  userShouldMakeText.classList.add('hidden')
-  clearButton.classList.add('hidden')
+  show(cookPotImage);
+  hide(userShouldMakeText);
+  hide(clearButton);
 }
 
 function enableCookButton() {
@@ -95,9 +95,9 @@ function enableCookButton() {
 }
 
 function displayMeals() {
-  userShouldMakeText.classList.remove('hidden');
-  clearButton.classList.remove("hidden");
-  cookPotImage.classList.add('hidden');
+  show(userShouldMakeText);
+  show(clearButton);
+  hide(cookPotImage);
 }
 
 function addUserRecipe(event) {
@@ -118,7 +118,7 @@ function addUserRecipe(event) {
       }
       displayMeals();
       mealBox.innerHTML = `<p class=any-dish>${recipeNameInput.value}!</p>`
-      recipeInputBar.classList.add('hidden')
+      hide(recipeInputBar);
     }
   } 
 }
@@ -148,6 +148,14 @@ function randomMeal(meal) {
 }
 function getRandomNumber(max) {
   return Math.floor(Math.random() * max)
+}
+
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
 }
 
 enableCookButton();
