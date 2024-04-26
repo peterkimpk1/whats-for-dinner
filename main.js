@@ -73,15 +73,15 @@ recipeAddNewButton.addEventListener('click', addUserRecipe);
 
 
 function showAddRecipeBar() {
-  recipeInputBar.classList.remove('hidden')
+  show(recipeInputBar);
 }
 
 function clearMeals(event) {
   event.preventDefault();
   mealBox.innerHTML = ""
-  cookPotImage.classList.remove('hidden')
-  userShouldMakeText.classList.add('hidden')
-  clearButton.classList.add('hidden')
+  show(cookPotImage);
+  hide(userShouldMakeText);
+  hide(clearButton);
 }
 
 function enableCookButton() {
@@ -95,9 +95,9 @@ function enableCookButton() {
 }
 
 function displayMeals() {
-  userShouldMakeText.classList.remove('hidden');
-  clearButton.classList.remove("hidden");
-  cookPotImage.classList.add('hidden');
+  show(userShouldMakeText);
+  show(clearButton);
+  hide(cookPotImage);
 }
 
 function addUserRecipe(event) {
@@ -118,36 +118,38 @@ function addUserRecipe(event) {
       }
       displayMeals();
       mealBox.innerHTML = `<p class=any-dish>${recipeNameInput.value}!</p>`
-      recipeInputBar.classList.add('hidden')
+      hide(recipeInputBar);
     }
   } 
 }
 
 function showMeals(event) {
   event.preventDefault();
-  var randomSideDish = randomMeal(sides);
-  var randomMainDish = randomMeal(mains);
-  var randomDessertDish = randomMeal(desserts);
+  var allRandomDishes = [randomMeal(sides), randomMeal(mains), randomMeal(desserts)]
   displayMeals();
-  if (sideInput.checked) {
-    mealBox.innerHTML = `<p class=any-dish>${randomSideDish}!</p>`
+  for (var i = 0; i < 4; i++) {
+    if (allInputs[i].checked) {
+      mealBox.innerHTML = `<p class=any-dish>${allRandomDishes[i]}!</p>`
+    }
   }
-  else if (mainDishInput.checked) {
-    mealBox.innerHTML = `<p class=any-dish>${randomMainDish}!</p>`
+  if (allInputs[3].checked) {
+      mealBox.innerHTML = `<p class=entire-meal>${allRandomDishes[1]} with a side of ${allRandomDishes[0]} and ${allRandomDishes[2]} for dessert!</p>`
+    }
   }
-  else if (dessertInput.checked) {
-    mealBox.innerHTML = `<p class=any-dish>${randomDessertDish}!</p>`
-  }
-  else if (entireMealInput.checked) {
-    mealBox.innerHTML = `<p class=entire-meal>${randomMainDish} with a side of ${randomSideDish} and ${randomDessertDish} for dessert!</p>`
-  }
-}
 
 function randomMeal(meal) {
   return meal[getRandomNumber(meal.length)];
 }
 function getRandomNumber(max) {
   return Math.floor(Math.random() * max)
+}
+
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
 }
 
 enableCookButton();
