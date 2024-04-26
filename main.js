@@ -125,23 +125,17 @@ function addUserRecipe(event) {
 
 function showMeals(event) {
   event.preventDefault();
-  var randomSideDish = randomMeal(sides);
-  var randomMainDish = randomMeal(mains);
-  var randomDessertDish = randomMeal(desserts);
+  var allRandomDishes = [randomMeal(sides), randomMeal(mains), randomMeal(desserts)]
   displayMeals();
-  if (sideInput.checked) {
-    mealBox.innerHTML = `<p class=any-dish>${randomSideDish}!</p>`
+  for (var i = 0; i < 4; i++) {
+    if (allInputs[i].checked) {
+      mealBox.innerHTML = `<p class=any-dish>${allRandomDishes[i]}!</p>`
+    }
   }
-  else if (mainDishInput.checked) {
-    mealBox.innerHTML = `<p class=any-dish>${randomMainDish}!</p>`
+  if (allInputs[3].checked) {
+      mealBox.innerHTML = `<p class=entire-meal>${allRandomDishes[1]} with a side of ${allRandomDishes[0]} and ${allRandomDishes[2]} for dessert!</p>`
+    }
   }
-  else if (dessertInput.checked) {
-    mealBox.innerHTML = `<p class=any-dish>${randomDessertDish}!</p>`
-  }
-  else if (entireMealInput.checked) {
-    mealBox.innerHTML = `<p class=entire-meal>${randomMainDish} with a side of ${randomSideDish} and ${randomDessertDish} for dessert!</p>`
-  }
-}
 
 function randomMeal(meal) {
   return meal[getRandomNumber(meal.length)];
